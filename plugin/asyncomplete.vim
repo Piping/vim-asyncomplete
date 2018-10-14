@@ -25,3 +25,23 @@ let g:asyncomplete_force_refresh_on_context_changed = get(g:, 'asyncomplete_forc
 
 " imap <c-space> <Plug>(asyncomplete_force_refresh)
 inoremap <silent> <expr> <Plug>(asyncomplete_force_refresh) asyncomplete#force_refresh()
+
+call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+    \ 'name': 'buffer',
+    \ 'whitelist': ['*'],
+    \ 'blacklist': ['go'],
+    \ 'completor': function('asyncomplete#sources#buffer#completor'),
+    \ }))
+
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
+    \ 'name': 'file',
+    \ 'whitelist': ['*'],
+    \ 'priority': 10,
+    \ 'completor': function('asyncomplete#sources#file#completor')
+    \ }))
+
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#emoji#get_source_options({
+    \ 'name': 'emoji',
+    \ 'whitelist': ['*'],
+    \ 'completor': function('asyncomplete#sources#emoji#completor'),
+    \ }))
