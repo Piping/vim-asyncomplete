@@ -13,3 +13,4 @@ All the credit goes to the following projects
 * [https://github.com/roxma/nvim-complete-manager](https://github.com/roxma/nvim-complete-manager)
 * [https://github.com/maralla/completor.vim](https://github.com/maralla/completor.vim)
 * [https://github.com/prabirshrestha/asyncomplete.vim](https://github.com/prabirshrestha/asyncomplete.vim)
+

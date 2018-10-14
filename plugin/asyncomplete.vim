@@ -12,11 +12,11 @@ if get(g:, 'asyncomplete_enable_for_all', 1)
     augroup END
 endif
 
-let g:asyncomplete_auto_popup = get(g:, 'asyncomplete_auto_popup', 1)
+" let g:asyncomplete_auto_popup = get(g:, 'asyncomplete_auto_popup', 1)
 let g:asyncomplete_completion_delay = get(g:, 'asyncomplete_completion_delay', 100)
 let g:asyncomplete_default_refresh_pattern = get(g:, 'asyncomplete_default_refresh_pattern', '\(\k\+$\|\.$\|>$\|:$\)')
 let g:asyncomplete_log_file = get(g:, 'asyncomplete_log_file', '')
-let g:asyncomplete_smart_completion = get(g:, 'asyncomplete_smart_completion', s:has_lua && exists('##TextChangedP'))
+" let g:asyncomplete_smart_completion = get(g:, 'asyncomplete_smart_completion', s:has_lua && exists('##TextChangedP'))
 let g:asyncomplete_remove_duplicates = get(g:, 'asyncomplete_remove_duplicates', 0)
 
 " Setting it to true may slow/hang vim especially on slow are sources such as asyncomplete-lsp.vim
@@ -27,6 +27,7 @@ let g:asyncomplete_force_refresh_on_context_changed = get(g:, 'asyncomplete_forc
 inoremap <silent> <expr> <Plug>(asyncomplete_force_refresh) asyncomplete#force_refresh()
 
 let g:asyncomplete_smart_completion = 1
+let g:asyncomplete_auto_popup = 1
 call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
     \ 'name': 'buffer',
     \ 'whitelist': ['*'],
